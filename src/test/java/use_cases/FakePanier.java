@@ -14,7 +14,7 @@ public class FakePanier implements PanierRepository{
      public List<Panier> paniers;
 
      public  FakePanier(){
-         Billet OPEN = new Billet();
+         /*Billet OPEN = new Billet();
          OPEN.setGenCode("LOL");
          OPEN.setName("superconcert");
          OPEN.setPrice(342L);
@@ -29,7 +29,7 @@ public class FakePanier implements PanierRepository{
          CLOSED.setStatuts("verrouillé");
          billets.add(OPEN);
          billets.add(CLOSED);
-
+  */     billets  = new ArrayList<>();
          panier = new Panier("1L",billets);
          paniers.add(panier);
 

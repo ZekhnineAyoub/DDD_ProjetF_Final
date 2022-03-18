@@ -12,22 +12,20 @@ public class CustomerStory implements PanierRepository{
    private PanierRepository panierRepository;
    private UserRepository userRepository;
 
-   private int A;
-
-
+   private int C;
 
 
    @BeforeEach
    public void init(){
-        A= 5;
-        //userRepository = new FakeUser();
+        C=5;
+        userRepository = new FakeUser();
         //panierRepository = new FakePanier();
-
+        //billetRepository = new FakeBillet();
    }
 
     @Test
     public void CheckSizeA() {
-        assertEquals(5,A);
+        assertEquals(5,C);
 
     }
 
