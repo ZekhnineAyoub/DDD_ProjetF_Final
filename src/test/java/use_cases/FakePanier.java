@@ -5,13 +5,15 @@ import model.Customer.Panier;
 import model.Customer.PanierRepository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FakePanier implements PanierRepository{
 
      public  Panier panier;
-     public List<Billet> billets;
-     public List<Panier> paniers;
+     private List<Billet> billets;
+     private Map<String,Panier> paniers;
 
      public  FakePanier(){
          /*Billet OPEN = new Billet();
@@ -30,8 +32,9 @@ public class FakePanier implements PanierRepository{
          billets.add(OPEN);
          billets.add(CLOSED);
   */     billets  = new ArrayList<>();
+         paniers = new HashMap<>();
          panier = new Panier("1L",billets);
-         paniers.add(panier);
+         paniers.put(panier.getUserId(), panier);
 
      }
 
@@ -43,6 +46,7 @@ public class FakePanier implements PanierRepository{
 
     @Override
     public void savePanier(Panier panier) {
+         paniers.put(panier.getUserId(),panier);
 
     }
 }

@@ -16,7 +16,7 @@ public class CustomerStory implements CustomerStoyManagement {
 
 
     @Override
-    public void create(String billetId, String userId) {
+    public Panier create(String billetId, String userId) {
             // récuperer tous les billets
             ///  List<String> billetsIds = billets.getAll();
             // on cherche notre billet dans la liste des billets
@@ -40,5 +40,6 @@ public class CustomerStory implements CustomerStoyManagement {
                 panier.emptyPanier();
             }*/
             }
+            return panier;
     }
 }

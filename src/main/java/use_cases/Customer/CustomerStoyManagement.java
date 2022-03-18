@@ -1,7 +1,9 @@
 package use_cases.Customer;
 
+import model.Customer.Panier;
+
 public interface CustomerStoyManagement {
 
-     void create(String billetId, String userId);
+     Panier create(String billetId, String userId);
 
 }
