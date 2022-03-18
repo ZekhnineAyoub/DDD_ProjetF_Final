@@ -18,17 +18,11 @@ public class Utilisateur {
         return idUser;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getAge() {
         return age;
@@ -42,9 +36,6 @@ public class Utilisateur {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
 
 
 

@@ -42,9 +42,6 @@ public class Panier {
         return billets;
     }
 
-    public void setBillets(List<Billet> billets) {
-        billets = billets;
-    }
 
     @Override
     public String toString() {
