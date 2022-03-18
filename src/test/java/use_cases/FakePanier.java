@@ -41,7 +41,7 @@ public class FakePanier implements PanierRepository{
 
     @Override
     public Panier findPanierByUserId(String userId) {
-        return null;
+        return paniers.get(userId);
     }
 
     @Override

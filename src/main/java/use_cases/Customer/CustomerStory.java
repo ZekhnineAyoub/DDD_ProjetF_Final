@@ -2,6 +2,9 @@ package use_cases.Customer;
 
 import model.Customer.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CustomerStory implements CustomerStoyManagement {
 
     private  BilletRepository billets; //stock
@@ -23,15 +26,19 @@ public class CustomerStory implements CustomerStoyManagement {
             Billet billet = billets.findById(billetId);
             Utilisateur user = users.findById(userId);
             Panier panier = paniers.findPanierByUserId(userId);
+            panier.addBilletAction(billet);
 
             // on check le statut du billet : si verouillé on leve une exception sinon on le verouille
-            if(billet.getStatuts()== "Deverouiller") {
-                billet.updateStatus();
+        //    if(billet.getStatuts()== "Deverouiller") {
+                //        billet.updateStatus();
 
                 // on rajoute le billet dans le panier
-                panier.addBilletAction(billet);
+                //   List<Billet> billets = new ArrayList<>();
+                  // billets.add(billet);
+                 //  panier.billets = billets;
 
-                paniers.savePanier(panier);
+                 //panier.billets.add(billet);
+                //paniers.savePanier(panier);
                 // on valide le panier()
             /*if (billet.date_add_in_panier > "today" ) {
                 panier.validateAction();
@@ -39,7 +46,7 @@ public class CustomerStory implements CustomerStoyManagement {
                 panier.generateBill();
                 panier.emptyPanier();
             }*/
-            }
+        //      }
             return panier;
     }
 }

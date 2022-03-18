@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Panier {
 
-    private final String userId;
+    private  String userId;
 
-    private List<Billet> billets;
+    public  List<Billet> billets;
 
 
     public Panier(String userId, List<Billet> billets) {
@@ -18,6 +18,8 @@ public class Panier {
     }
 
     public void addBilletAction(Billet billet) {
+        billets.add(billet);
+
     }
 
     public void validateAction() {
@@ -41,7 +43,7 @@ public class Panier {
     }
 
     public void setBillets(List<Billet> billets) {
-        this.billets = billets;
+        billets = billets;
     }
 
     @Override

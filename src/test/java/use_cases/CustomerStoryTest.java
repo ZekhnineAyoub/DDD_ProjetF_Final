@@ -8,7 +8,7 @@ import use_cases.Customer.CustomerStory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class CustomerStoryTest implements PanierRepository{
+public class CustomerStoryTest{
 
    private BilletRepository billetRepository;
    private PanierRepository panierRepository;
@@ -17,13 +17,13 @@ public class CustomerStoryTest implements PanierRepository{
    public Panier panier ;
 
 
-   private final CustomerStory customerStory;
+   public  CustomerStory customerStory;
 
    private int C;
-
+/*
     public CustomerStoryTest(CustomerStory customerStory) {
         this.customerStory = customerStory;
-    }
+    }*/
 
 
     @BeforeEach
@@ -32,7 +32,7 @@ public class CustomerStoryTest implements PanierRepository{
         userRepository = new FakeUser();
         billetRepository = new FakeBillet();
         panierRepository = new FakePanier();
-
+        customerStory = new  CustomerStory(billetRepository, userRepository, panierRepository);
         panier = customerStory.create("b6366f6e-3879-47bc-8d06-b1745314a15b","1L");
         //billetRepository = new FakeBillet();
    }
@@ -43,13 +43,4 @@ public class CustomerStoryTest implements PanierRepository{
 
     }
 
-    @Override
-    public Panier findPanierByUserId(String userId) {
-        return null;
-    }
-
-    @Override
-    public void savePanier(Panier panier) {
-
-    }
 }
